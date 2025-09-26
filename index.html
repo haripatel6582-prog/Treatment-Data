@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+  <meta charset="UTF-8">
+  <title>Treatment Plan - Mahisagar Forest Division</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div class="form-wrapper">
+    <div class="form-container">
+      <h1>Data Entry Form</h1>
+      <div class="field"><label>રેંજનું નામ:</label>
+        <select id="range">
+          <option value="લુણાવાડા">લુણાવાડા</option>
+          <option value="ખાનપુર">ખાનપુર</option>
+          <option value="બાલાસિનોર">બાલાસિનોર</option>
+          <option value="સંતરામપુર (પુર્વ)">સંતરામપુર (પુર્વ)</option>
+          <option value="સંતરામપુર (પશ્ચિમ)">સંતરામપુર (પશ્ચિમ)</option>
+          <option value="મુનપુર">મુનપુર</option>
+          <option value="ડીટવાસ">ડીટવાસ</option>
+        </select>
+      </div>
+      <div class="field"><label>રાઉન્ડનું નામ:</label><input type="text" id="round"></div>
+      <div class="field"><label>બીટનું નામ:</label><input type="text" id="beat"></div>
+      <div class="field"><label>સ્થળનું નામ:</label><input type="text" id="place"></div>
+      <div class="field"><label>મોડલનું નામ:</label>
+        <select id="model">
+          <option value="ફોરેસ્ટ મેનેજમેન્ટ એન્ડ ડેવલોપમેન્ટ (બિન આદિવાસી)">ફોરેસ્ટ મેનેજમેન્ટ એન્ડ ડેવલોપમેન્ટ (બિન આદિવાસી)</option>
+          <option value="ફોરેસ્ટ મેનેજમેન્ટ એન્ડ ડેવલોપમેન્ટ (આદિવાસી)">ફોરેસ્ટ મેનેજમેન્ટ એન્ડ ડેવલોપમેન્ટ (આદિવાસી)</option>
+          <option value="Project for Ecosystem Restoration in Gujarat (PERG)">Project for Ecosystem Restoration in Gujarat (PERG)</option>
+          <option value="CAMPA">CAMPA</option>
+        </select>
+      </div>
+      <div class="field"><label>વિસ્તાર:</label><input type="text" id="area"></div>
+      <div class="field"><label>વર્ષ:</label><input type="text" id="year"></div>
+      <div class="field"><label>તૈયાર કરનાર:</label><input type="text" id="preparedBy"></div>
+      <div class="field"><label>મંજૂરી આપનાર:</label><input type="text" id="approvedBy"></div>
+      <div class="field"><label>મંજૂર કાર્ય નંબર અને તારીખ:</label><input type="text" id="approvalNo"></div>
+      <div class="field"><label>બ્લોકની સંખ્યા:</label><input type="number" id="blockCount" min="1" value="1"></div>
+      <div class="field"><label>GPS Map Image:</label><input type="file" id="gpsImage" accept="image/*"></div>
+      <div class="buttons">
+        <button class="btn create" onclick="generatePages()">Create Full Page</button>
+        <button class="btn download" onclick="downloadPDF()">Download PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="output"></div>
+  <script src="script.js"></script>
+</body>
+</html>
